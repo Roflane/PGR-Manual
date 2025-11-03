@@ -108,12 +108,12 @@ function blockScroll() {
         if (event.ctrlKey) {
             event.preventDefault();
         }
-    }, { passive: false });
+    });
     window.addEventListener('keydown', function (e) {
         if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '_')) {
             e.preventDefault();
         }
-    }, { passive: false });
+    });
 }
 function blockF12() {
     window.addEventListener("keydown", (e) => {
@@ -121,9 +121,16 @@ function blockF12() {
             e.preventDefault();
     });
 }
+function blockRMB() {
+    window.addEventListener("keydown", (e) => {
+        if (e.key == "contextmenu")
+            e.preventDefault();
+    });
+}
 document.addEventListener("DOMContentLoaded", async () => {
     blockScroll();
     blockF12();
+    blockRMB();
     bindLanguageAndMenu();
     bindChangeMenu();
     await bindLoadPage("home");
