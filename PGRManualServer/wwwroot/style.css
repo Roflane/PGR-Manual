@@ -1,0 +1,776 @@
+@font-face {
+    font-family: RuiXian;
+    src: url("fonts/RuiXian.otf");
+}
+
+@font-face {
+    font-family: Frederick;
+    src: url("fonts/Frederick-UltraLight.otf");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: RuiXian;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+footer {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+
+    color: #fff;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.4);
+}
+
+.footer-github, .footer-telegram {
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    width: 3%;
+    height: 90%;
+    /* transform: translate(50%, -50%); */
+}  
+/* .footer-github:hover {
+    text-decoration: underline;
+} */
+
+.footer-telegram {
+    right: 5rem;
+}
+
+
+.header {
+    position: absolute;
+    width: 30%;
+    left: 1rem;
+}
+.header-container {
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    
+    backdrop-filter: blur(8px);
+    background: rgba(124, 159, 255, 0);
+    box-shadow: 0 4px 40px rgba(0, 183, 255, 0.1);
+}
+
+.language-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: 0;
+    margin: 1%;
+
+    border: 1px solid black;
+    border-radius: 12px;
+    cursor: pointer;  
+} .language-wrapper a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+
+    padding: 5px; 
+} .language-wrapper a:hover {
+    color: red;
+
+    transition: color 0.273s ease-in-out;
+} .language-wrapper select {   
+    height: 2em;
+    width: 4.5em;
+    appearance: none;
+    color: white;   
+    backdrop-filter: blur(8px);
+    background: rgba(124, 159, 255, 0);
+    box-shadow: 0 4px 40px rgba(0, 183, 255, 0.1);
+    border: 1px solid black;
+    border-radius: 10px;
+} .language-wrapper option {
+    color: black;
+}
+
+.home-page {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 30%;
+    width: 25rem;
+    height: 20rem;
+    transform: translate(50%, -50%);
+    
+    background: rgba(0,0,0,0.4);
+    color: white;
+
+    backdrop-filter: blur(4px);
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+    border: 1px solid black;
+}
+
+
+.menu-wrapper {
+    position: absolute;
+    top: 35%;
+
+    width: 500px;
+    font-size: 20px;
+    cursor: pointer;
+} .menu-wrapper a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.menu-list {
+    list-style: none;
+
+    padding: 0.7rem;
+    margin-left: 1.5rem;
+    /*padding-top: 2rem;*/
+
+    border-left: 1.5px solid black;
+} .menu-list li {
+    margin-bottom: 1.5rem;
+}
+
+.menu-list a {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 5px;
+} .menu-list a::before {
+    content: ''; 
+    position: absolute;
+
+    width: 0%; 
+    height: 1.5px; 
+
+    bottom: 0;
+    left: 50%;
+
+    background-color: red;
+
+    transition: width 0.273s ease-in-out, left 0.273s ease-in-out; 
+} .menu-list a:hover::before {
+    width: 100%;
+    left: 0;
+} .menu-list a:hover {
+    color: red;
+    transition: color 0.273s ease-in;
+}
+
+/* builds */
+.wnd-selector {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 10rem;
+    top: 19%;
+    left: 24%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    cursor: pointer;
+    border-radius: 12px;
+} .wnd-selector {
+    flex-direction: column;
+} .wnd-selector a:hover {
+    color: red;
+    transition: color 0.273s ease-in;
+}
+
+
+.wnd-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    backdrop-filter: blur(4px);
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+
+    width: 40%; 
+    height: 70%;
+    padding: 20px; 
+
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+/*Header*/
+.damage-type-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 1.5rem;
+    gap: 0.5em;
+}
+.damage-type-wrapper .damage-type {
+    width: 5rem;
+    height: 5rem;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+}  
+.damage-type-header {
+    margin-left: 2.5rem;
+}
+.team-header, .build-header {
+    position: absolute;
+    padding-left: 25%;
+} 
+.build-header {
+    padding-left: 60%;
+}
+
+/* Team */
+.team-wrapper {
+    display: flex;
+    flex-direction: column; 
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 19%;
+    width: fit-content;
+    row-gap: 35px;
+}  
+.team-wrapper div {
+    display: flex;
+    flex-direction: row;
+}
+.team-wrapper img {
+    width: 50px;       
+    border: 1px solid white;
+    border-radius: 16px;
+}
+
+/* Build */
+.build-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 15%;  
+    left: 50%;
+    row-gap: 2rem;
+    text-align: center;
+}
+.build {
+    display: flex;
+    flex-direction: row;
+    width: 105%;
+}
+.memory {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    width: 100%;
+}
+.memory .signature, .signature { color: #CB0404; }
+.memory .secondary, .secondary { color: #F4631E; }
+.memory .support, .support { color: #309898; }
+
+
+.note-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 2rem;
+} .signature, .secondary, .support {   
+    padding-right: 5%;
+}
+  
+.note-wrapper.ru {
+    font-family: Frederick, serif;
+}
+.language-ru {
+    font-family: Frederick, serif;
+}
+
+
+.mechanics-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    position: absolute;
+    font-weight: bold;  
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    backdrop-filter: blur(4px);
+    background: rgba(0, 217, 255, 0.5);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
+
+    width: 50rem; 
+    height: 39rem;
+    padding: 20px; 
+
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+.mechanics-wrapper.en {
+    height: 38rem;
+}
+.mechanics-wrapper.ru {
+    font-family: Frederick;
+    height: 39.5rem;
+}
+.orb.red { color: red; }
+.orb.yellow { color: yellow; }
+.orb.blue { color: blue; }
+
+.explicit-mechanics { color: rgba(81, 255, 0, 0.7); }
+.implicit-mechanics { color: darkmagenta; }
+
+
+/* 
+@media (max-width: 1920px) {
+    .background-video {
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 1100px){
+    html, body {
+        overflow: hidden;
+        height: 100%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .mechanics-wrapper.en,  .mechanics-wrapper.ru,  .mechanics-wrapper.kr {
+        font-size: 13.4px;
+        
+        width: 45rem; 
+        height: 31rem;
+    }
+
+    .wnd-wrapper {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+        width: 45rem; 
+        height: 33rem;
+        padding: 20px; 
+    
+    }
+    .element-wrapper {
+        display: flex;
+        flex-direction: column;
+        
+        padding-top: 2%;
+        
+        gap: 1.1em;
+    } .element {
+        text-align: center;
+    
+        font-weight: bold;
+    
+        width: 5em;
+        
+        border: 1px solid black;
+        border-radius: 12px;
+    } 
+
+    .build-wrapper {
+        right: 12%;
+    
+    } .build {
+        display: flex;
+        text-align: left;
+    
+        width: 150%;
+        padding-top: 2%;
+        padding-bottom: 10%;
+    } .memory {
+        font-weight: bold;
+    
+        width: 30%;
+    } 
+
+    .note-wrapper {        
+        margin-top: 3%;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 1000px){
+    html, body {
+        overflow: hidden;
+        height: 100%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .mechanics-wrapper {
+        font-size: 10.1px;
+
+        width: 40rem; 
+        width: 21rem; 
+    }
+
+    .wnd-wrapper {
+        width: 40rem; 
+    }
+
+    .elements-header {
+        margin: 0;
+        margin-right: 1%;
+        padding-bottom: 10px;
+    } .team-header {
+        padding-left: 24%;
+        top: 0.5%;
+    } .build-header {
+        padding-left: 67%;
+    }
+
+
+    .element-wrapper {
+        padding-top: 2%;
+        
+        gap: 1.1em;
+    } .element {    
+        width: 5em;
+    } 
+
+    
+    .build-wrapper {
+        font-size: 13px;
+    
+    } .build {
+        width: 140%;
+
+        padding-top: 10%;
+        padding-left: 0%;
+        padding-bottom: 9%;
+    } .memory {
+        width: 100%;
+    } 
+
+    .team-wrapper {
+        position: absolute;
+    
+        margin-top: 7%;
+        margin-left: 19%;
+    } .team-wrapper img {
+        width: 7%;
+    
+        margin-bottom: 6.5%;
+    
+        border: 1px solid white;
+        border-radius: 16px;
+    }
+
+    
+    .note-wrapper {
+        font-size: 14px;
+        
+        margin-top: 5%;
+        width: 100%;
+    }
+
+
+}
+
+
+@media (max-width: 768px){
+    html, body {
+        overflow: hidden;
+        height: 100%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .mechanics-wrapper {
+        font-size: 8.3px;
+        
+        width: 25rem; 
+        height: 21rem; 
+    }
+
+    .wnd-wrapper {
+        width: 25rem; 
+        height: 27rem; 
+    }
+
+    .elements-header {
+        font-size: 15px;
+
+        padding-bottom: 10px;
+        padding-left: 1.5%;
+    } .team-header {
+        font-size: 15px;
+
+        padding-left: 24%;
+        top: 1%;
+    } .build-header {
+        font-size: 15px;
+
+        top: 1%;
+        padding-left: 59%;
+    }
+
+
+    .element-wrapper {
+        font-size: 13px;
+
+        padding-top: 2%;
+        padding-left: 1.5%;
+        gap: 1.1em;
+    } .element {    
+        width: 3em;
+    } .element-wrapper {
+        padding-top: 2%;
+        
+        gap: 1.1em;
+    } .element {    
+        width: 5em;
+    } 
+
+    .team-wrapper {
+        margin-top: 8%;
+        margin-left: 19%;
+    } .team-wrapper img {
+        width: 7%;
+        margin-bottom: 10%;
+    }
+
+    .build-wrapper {
+        font-size: 10px;
+    
+    } .build {
+        width: 150%;
+
+        padding-top: 10%;
+        padding-left: 0%;
+        padding-bottom: 9%;
+    } .memory {
+        width: 30%;
+    } 
+
+    .note-wrapper {  
+        font-size: 12px;
+        margin-top: 6%;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px){
+    html, body {
+        overflow: hidden;
+        height: 100%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .wnd-wrapper {
+        width: 15rem; 
+        height: 21rem; 
+    }
+
+    .elements-header {
+        font-size: 12px;
+
+        padding-bottom: 10px;
+        padding-left: 1.5%;
+    } .team-header {
+        font-size: 12px;
+
+        padding-left: 24%;
+        top: 2%;
+    } .build-header {
+        font-size: 12px;
+
+        top: 2%;
+        padding-left: 55%;
+    }
+
+
+    .element-wrapper {
+        font-size: 10px;
+        padding-top: 2%;
+        padding-left: 1.5%;
+        gap: 1.1em;
+    } .element {    
+        width: 5em;
+    } .element-wrapper {
+        padding-top: 2%;
+        
+        gap: 1.1em;
+    } .element {    
+        width: 3em;
+
+    } 
+
+
+    .build-wrapper {
+        font-size: 7px;
+    
+    } .build {
+        width: 120%;
+
+        padding-top: 9%;
+        padding-left: 20%;
+        padding-bottom: 10%;
+    } .memory {
+        width: 30%;
+    } 
+
+    .team-wrapper {    
+        margin-top: 12%;
+        margin-left: 19%;
+    } .team-wrapper img {
+        width: 7%;
+    
+        margin-bottom: 13%;
+    }
+
+    
+    .note-wrapper {  
+        font-size: 11px;
+        margin-top: 2%;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 580px) {
+    html, body {
+        overflow: hidden;
+        height: 100%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .mechanics-wrapper.kr {
+        font-size: 4px;
+
+        width: 8rem; 
+        height: 13rem;
+    }
+     .mechanics-wrapper.en{
+        font-size: 4px;
+
+        width: 8rem; 
+        height: 12.5rem;
+    }
+    .mechanics-wrapper.ru {
+        font-size: 4px;
+
+        width: 8rem; 
+        height: 14rem;
+    }
+
+
+    .menu-list {
+        font-size: 5px;
+
+        margin-left: 1rem;
+        padding-top: 2rem;
+    } .menu-list li {
+        margin-bottom: 1.5rem;
+    }
+
+    .wnd-wrapper {
+        width: 8rem; 
+        height: 9rem; 
+    }
+
+    .elements-header {
+        font-size: 6px;
+
+        padding-bottom: 10px;
+        padding-left: 1.5%;
+    } .team-header {
+        font-size: 6px;
+
+        top: 8%;
+        padding-left: 24%;
+    } .build-header {
+        font-size: 6px;
+
+        top: 8%;
+        padding-left: 55%;
+    }
+
+
+    .element-wrapper {
+        font-size: 5px;
+
+        padding-top: 2%;
+        padding-left: 1.5%;
+
+        gap: 1em;
+    } .element {    
+        width: 3em;
+    } 
+
+    .team-wrapper {    
+        margin-top: 12%;
+        margin-left: 19%;
+    } .team-wrapper img {
+        width: 7%;
+    
+        margin-bottom: 7%;
+    }
+
+
+    .build-wrapper {
+        font-size: 3px;
+    
+    } .build {
+        width: 150%;
+
+        padding-top: 20%;
+        padding-left: 10%;
+        padding-bottom: 8%;
+    } .memory {
+        width: 30%;
+    } 
+
+    .note-wrapper {  
+        font-size: 3px;
+        margin-top: 2%;
+    }
+
+    .note-wrapper.kr {  
+        margin-top: -2%;
+    }
+} */
