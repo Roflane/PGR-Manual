@@ -4,7 +4,7 @@ Hand-written documentation site built without frameworks.
 
 **Stack:** HTML, CSS, JavaScript, AJAX
 
-### What it demonstrates
+### Implementation
 - Vanilla JS with AJAX for dynamic content loading
 - Pure CSS layout without frameworks
 - Static site structure for technical documentation
